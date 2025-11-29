@@ -1,6 +1,8 @@
+'use client'
 import { ChartAreaInteractive } from "@/components/chart-area-interactive";
 import DataTable from "@/components/data-table";
 import { SectionCards } from "@/components/section-cards";
+import { Button } from "@/components/ui/button";
 import data from "@/lib/data.json";
 
 export default function Home() {
@@ -32,7 +34,16 @@ export default function Home() {
     {
       header: "Action",
       accessorKey: "action",
-
+      cell: ({  }) => {
+        // const doctor = row.original;
+        return (
+          <div className="flex justify-center gap-2">
+            <Button variant="default">View</Button>
+            <Button variant="outline">Edit</Button>
+            <Button variant="destructive">Delete</Button>
+          </div>
+        );
+      },
     },
   ]
   return (
